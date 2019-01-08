@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package AS;
+
+option optimize_for = SPEED;
+
+message PlayerInfo {
+    float screenX = 1;
+    float screenY = 2;
+    float Height = 3;
+    float Width = 4;
+	float distance = 5;
+	float maxHealth = 6;
+	float currHealth = 7;
+	bool isEnemy = 8;
+	bool isMe = 9;
+    bool isBehindCamera = 10;	
+}
+
+message OverlayData {
+  repeated PlayerInfo data = 1;
+}

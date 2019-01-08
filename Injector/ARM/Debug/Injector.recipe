@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths>;</SOLibPaths>
+  <AndroidLibPaths />
+  <OObjPaths>C:\Users\KSOFT\Desktop\MMSuperPatcher\Injector\Injector\\obj\local\armeabi-v7a</OObjPaths>
+  <Configuration />
+  <Platform />
+  <AndroidArchitecture />
+  <!--links to other recipe files-->
+  <RecipeFiles />
+</project>

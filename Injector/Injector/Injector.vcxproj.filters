@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\jni\Android.mk" />
+    <None Include="..\jni\Application.mk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\jni\config.h" />
+    <ClInclude Include="..\jni\injector.h" />
+    <ClInclude Include="..\jni\ptrace.h" />
+    <ClInclude Include="..\jni\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\jni\injector.c" />
+    <ClCompile Include="..\jni\main.c" />
+    <ClCompile Include="..\jni\ptrace.c" />
+    <ClCompile Include="..\jni\utils.c" />
+  </ItemGroup>
+</Project>

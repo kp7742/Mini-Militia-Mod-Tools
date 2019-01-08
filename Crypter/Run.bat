@@ -1,0 +1,1 @@
+java -cp Bin Crypter %~1

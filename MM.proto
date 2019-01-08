@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package MM;
+
+option java_package = "com.kmods.mmsuperpatcher.utils";
+
+option optimize_for = SPEED;
+
+message MMSP {
+	enum SType {
+		RD = 0;
+		WR = 1;
+		START = 2;
+		STOP = 3;
+	}
+    SType type = 1;
+	string data = 2; 
+}

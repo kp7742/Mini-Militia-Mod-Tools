@@ -1,0 +1,240 @@
+-> DA2-Mini Militia v3.0.87 <-
+
+~Features~
+- Gun Shot 2.
+- Unlock Pro Pack.
+- Unlimited Health.
+- Unlimited Flying Power.
+- Anti Gravity Like Lunar Map.
+- No Reload.
+- Unlimited Ammo.
+- Dual Wield.
+- Ghost Mod.
+- No Enemy See Me.
+- Store Item Purchased.
+- All Weapons Laser.
+
+[LIB]
+{"name":"libcocos2dcpp.so"}
+
+//Name Patch//0x910A50(9505360)
+{"original":"54 4F 55 43 48 20 20 20 20 53 54 41 52 54 00 00 4C 4F 41 44 49 4E 47"}
+{"replaced":"4B 55 4C 44 49 50 20 20 20 4B 4D 4F 44 53 00 00 4B 55 4C 44 49 50 50"}
+
+//SoldierHostController::addDamage
+PUSH {R4,LR} -> BX LR//0x4728A4(4663460)
+{"original":"C8 D6 FF FF 10 B5 88 B0 05 90 04 91 03 92 02 93"}
+{"replaced":"C8 D6 FF FF 70 47 88 B0 05 90 04 91 03 92 02 93"}
+
+//InAppPurchaseBridge::isProductPurchased
+PUSH {R4,LR} -> BX LR//0x4DADC8(5090760)
+{"original":"CC D4 FF FF 52 A3 5C 00 10 B5 86 B0 01 90 FB F7"} 
+{"replaced":"CC D4 FF FF 52 A3 5C 00 01 20 70 47 01 90 FB F7"}
+MOV R0, R3 -> MOV R0, #1//0x4DAE72(5090930)
+{"original":"5E EA 18 46 06 B0 10 BD 2A E3 43 00 70 47 00 BF"} 
+{"replaced":"5E EA 01 20 06 B0 10 BD 2A E3 43 00 70 47 00 BF"}
+
+//ItemPurchase::isItemPurchased
+PUSH {R4,LR} -> BX LR//0x394598(3753368)
+{"original":"7E 90 56 00 52 90 56 00 10 B5 86 B0 01 90 FF F7"} 
+{"replaced":"7E 90 56 00 52 90 56 00 01 20 70 47 01 90 FF F7"}
+MOV R0, R3 -> MOVS R0, #1//0x394600(3753472)
+{"original":"18 46 06 B0 10 BD 00 BF 30 B5 85 B0 01 90 FF F7"}
+{"replaced":"01 20 06 B0 10 BD 00 BF 30 B5 85 B0 01 90 FF F7"}
+
+//SoldierHostController::hasPower
+PUSH {LR} -> BX LR//0x471900(4659456)
+{"original":"00 B5 83 B0 01 90 01 9B 1B 68 03 F5 28 73 1B 68"}
+{"replaced":"01 20 70 47 01 90 01 9B 1B 68 03 F5 28 73 1B 68"}
+
+//Weapon::getRoundsPerFire
+MOV R0, R3//0x4ABC1E(4897822)
+{"original":"02 B0 70 47 82 B0 01 90 01 9B D3 F8 B4 31 18 46"}
+{"replaced":"02 B0 70 47 82 B0 01 90 01 9B D3 F8 B4 31 02 20"}
+
+//SoldierHostController::getGrenadeCount
+MOV R0, R3//0x47227C(4661884)
+{"original":"00 23 01 23 DB B2 00 2B D6 D1 03 9B 18 46 06 B0"}
+{"replaced":"00 23 01 23 DB B2 00 2B D6 D1 03 9B 02 20 06 B0"}
+& Weapon::getAmmo
+LDRH.W R3, [R3,#0x1E8]//0x4AB72C(4896556),0x4AB74E
+{"original":"B3 F8 E8 31 1B B2 03 93 02 AA 03 AB 10 46 19 46 C7 F6 5C F8 03 46 1B 68 9B B2 1B B2 01 E0 EC F3 F0 ED 18 46"}
+{"replaced":"32 20 A3 F8 E8 01 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 C0 46 01 E0 EC F3 F0 ED 01 20"}
+
+//Weapon::getReloadTime
+MOV R0, R3//0x4AB970(4897136)
+{"original":"18 46 02 B0 70 47 00 BF 82 B0 01 90 00 91 01 9B"}
+{"replaced":"00 20 02 B0 70 47 00 BF 82 B0 01 90 00 91 01 9B"}
+
+//MapManager::getGravityFactor
+MOV R0, R3//0x3B0A54(3869268)
+{"original":"01 9B DB 6D 18 46 02 B0 70 47 00 BF 10 B5 82 B0"}
+{"replaced":"01 9B DB 6D 00 20 02 B0 70 47 00 BF 10 B5 82 B0"}
+
+//Weapon::isDualWield & Weapon::isDualWieldPrimaryOnly
+MOV R0, R3//0x4ABC4E(4897870)
+{"original":"02 B0 70 47 82 B0 01 90 01 9B 93 F8 83 31 18 46"}
+{"replaced":"02 B0 70 47 82 B0 01 90 01 9B 93 F8 83 31 01 20"}
+MOV R0, R3//0x4ABC6E(4897902)
+{"original":"02 B0 70 47 82 B0 01 90 01 9B 93 F8 84 31 18 46"}
+{"replaced":"02 B0 70 47 82 B0 01 90 01 9B 93 F8 84 31 01 20"}
+
+//MapManager::addStaticBodyShape->x
+PUSH {R4-R7, LR} -> BX LR//0x3B2D00(3878144)
+{"original":"F0 B5 2D ED 02 8B AD F6 DC 2D 0B AB 18 60 0A AB"}
+{"replaced":"70 47 2D ED 02 8B AD F6 DC 2D 0B AB 18 60 0A AB"}
+
+//Enemy::canSeeTarget & WormDrone::canSeeTarget->x
+PUSH {R4,R5, LR} -> BX LR//0x3518A8(3479720)
+{"original":"70 47 00 BF 00 00 00 00 30 B5 AB B0 0B 90 44 4C"}
+{"replaced":"70 47 00 BF 00 00 00 00 00 20 70 47 0B 90 44 4C"}
+PUSH {LR} -> BX LR//0x4B7B84(4946820)
+{"original":"04 FB 00 BF 00 B5 8D B0 01 90 01 9B 1B 68 03 F5"}            
+{"replaced":"04 FB 00 BF 00 20 70 47 01 90 01 9B 1B 68 03 F5"}
+
+//WeaponFactory::isLaserSight
+MOV R0, R3//0x4AF426(4912166)
+{"original":"00 BF 9D F8 0F 30 18 46 04 B0 70 47 84 B0 01 90"}
+{"replaced":"00 BF 9D F8 0F 30 01 20 04 B0 70 47 84 B0 01 90"}
+
+//SoldierManager::getRespawnTime
+LDR R3, [R3, #0x18] -> MOVS R0, #1//0x475846(4675654)
+MOV R0, R3 -> STR R0, [R3, #0x18]
+{"original":"82 B0 01 90 01 9B 9B 69 18 46 02 B0 70 47 00 BF"}
+{"replaced":"82 B0 01 90 01 9B 01 20 98 61 02 B0 70 47 00 BF"}
+VLDR            S15, =10.0
+VMOV            R3, S15
+MOV             R0, R3
+
+//NetworkManager::sendPositionData->x
+PUSH {R4,LR} -> BX LR//0x3D3274(4010612)
+{"original":"5D F8 04 FB 10 B5 86 B0 03 90 02 91 13 46 8D F8"}
+{"replaced":"5D F8 04 FB 70 47 86 B0 03 90 02 91 13 46 8D F8"}
+
+//Test
+
+//Explosion::applyDamage, GasCloud::applyDamage, PlasmaBall::applyDamage
+PUSH {R4-R6,LR} -> BX LR//0x357FF8(3506168)
+{"original":"BD E8 10 40 02 B0 70 47 70 B5 2D ED 02 8B D0 B0"}
+{"replaced":"BD E8 10 40 02 B0 70 47 70 47 2D ED 02 8B D0 B0"}
+PUSH {R4-R5,LR} -> BX LR//0x37C1A0(3654048)
+{"original":"30 B5 2D ED 02 8B 93 B0 05 90 04 91 77 4C 7C 44"}
+{"replaced":"70 47 2D ED 02 8B 93 B0 05 90 04 91 77 4C 7C 44"}
+PUSH {R4-R5,LR} -> BX LR//0x3F9484(4166788)
+{"original":"00 00 BE 42 30 B5 89 B0 05 90 04 91 3F 4C 7C 44"}
+{"replaced":"00 00 BE 42 70 47 89 B0 05 90 04 91 3F 4C 7C 44"}
+
+//NetworkMessageDispatcher::updatePeerDamage->x
+SUBS-> NOP//0x3E3804(4077572)
+{"original":"1A 46 14 9B D3 1A 2B 44 14 98 19 46 64 F2 3E F8"}
+{"replaced":"1A 46 14 9B 00 BF 2B 44 14 98 19 46 64 F2 3E F8"}
+SUBS-> NOP//0x3E3828(4077608)
+{"original":"F9 FD 03 46 1A 46 14 9B D3 1A 2B 44 14 9A 13 44"}
+{"replaced":"F9 FD 03 46 1A 46 14 9B 00 BF 2B 44 14 9A 13 44"}
+
+//LeaderBoardBridge::calcPlayerSkill & LeaderBoardBridge::getCachedPlayerSkill->x
+MOV R0, R3//4C2B92
+{"original":"E8 30 18 46 07 B0 30 BD 94 9F 5D 00 88 DF FF FF"}
+{"replaced":"E8 30 99 32 07 B0 30 BD 94 9F 5D 00 88 DF FF FF"}
+MOV R0, R3//4C2D76
+{"original":"1B 68 D3 F8 E8 30 18 46 02 B0 70 47 F6 9C 5D 00"}
+{"replaced":"1B 68 D3 F8 E8 30 90 32 02 B0 70 47 F6 9C 5D 00"}
+
+//ApplicationInterface::getOSType
+MOVS R3, #*//0x4D4202(5063170)(0=IOS, 1=Android, 2=Amazon Fire)
+{"original":"01 23 18 46 70 47 00 BF 00 B5 85 B0 01 AB 18 46"}
+{"replaced":"01 23 00 20 70 47 00 BF 00 B5 85 B0 01 AB 18 46"}
+
+//SoldierHostController::updateStep->x
+ADD R3, SP, #0x24 -> VMOV.F32 S15, #4.000000E+00//46836A
+LDR R3, [R3]
+{"original":"09 AB 1B 68 D3 ED 72 7A 77 EE 27 7A FD EE E7 7A"}
+{"replaced":"F1 EE 00 7A 67 EE A7 7A 77 EE 27 7A FD EE E7 7A"}
+ADD R3, SP, #0x24 -> VMOV.F32 S14, #3.000000E+00//4684F2
+LDR R3, [R3]
+{"original":"90 0A 09 AB 1B 68 93 ED 73 7A F1 EE 0C 7A 27 EE"}
+{"replaced":"90 0A B0 EE 08 7A 27 EE 07 7A F1 EE 0C 7A 27 EE"}
+
+//LeaderBoardBridge::calcPlayerExp
+MOV R0, R3//0x4CA7AC(5023660)
+{"original":"00 F0 AC F9 03 46 03 93 03 9B 18 46 05 B0 5D F8"}             
+{"replaced":"00 F0 AC F9 64 20 0A 21 40 43 48 43 05 B0 5D F8"}
+
+//Weapon::getBulletSpeed
+MOV R0, R3//0x4ABC34(4897844)
+{"original":"02 B0 70 47 82 B0 01 90 01 9B D3 F8 BC 31 18 46"}
+{"replaced":"02 B0 70 47 4F F6 FF 70 70 47 D3 F8 BC 31 18 46"}
+MOV R0, R3//0x4ABC36(4897846)- New, **- speed x value;
+{"original":"02 B0 70 47 82 B0 01 90 01 9B D3 F8 BC 31 18 46"}
+{"replaced":"02 B0 70 47 82 B0 D0 F8 BC 31 ** 24 18 46 60 43"}           
+
+//Weapon::getWeightFactor
+MOV R0, R3//0x4ABF88(4898696)
+{"original":"30 40 02 B0 70 47 00 BF 82 B0 01 90 01 9B D3 F8"}
+{"replaced":"30 40 02 B0 70 47 00 BF 38 46 70 47 01 9B D3 F8"}
+
+//SoldierHostController::getWeaponWeightFactor
+//SoldierHostController::getMassFactor
+
+//Weapon::getRange
+MOV R0, R3//0x4AB902(4897026)
+{"original":"82 B0 01 90 01 9B D3 F8 A4 31 18 46 02 B0 70 47"}
+{"replaced":"82 B0 01 90 01 9B D3 F8 A4 31 38 46 02 B0 70 47"}
+or//0x4AB8F8(4897016)
+{"original":"82 B0 01 90 01 9B D3 F8 A4 31 18 46 02 B0 70 47"}
+{"replaced":"4C F6 CD 40 C3 F6 CC 60 70 47 18 46 02 B0 70 47"}
+or//0x4AB8F8(4897016)
+{"original":"82 B0 01 90 01 9B D3 F8 A4 31 18 46 02 B0 70 47"}
+{"replaced":"D3 F8 A4 31 FF 24 18 46 60 43 70 47 02 B0 70 47"}
+             
+//Weapon::getZoomScale
+MOV R0, R3//0x4ABA7C(4897404)
+{"original":"82 B0 01 90 01 9B D3 F8 48 31 18 46 02 B0 70 47"}
+{"replaced":"4C F6 CD 40 C3 F6 CC 60 70 47 18 46 02 B0 70 47"}
+
+//Weapon::getZoomLabel
+
+//Weapon Troll
+ProjectileManager::addGrenade//0x42F372(4387698)
+{"original":"18 46 20 99 7F F0 F8 FE 03 46 03 93 01 9B 9B 69"}
+{"replaced":"18 46 ** 21 7F F0 F8 FE 03 46 03 93 01 9B 9B 69"}
+ProjectileManager::addRocket//0x42F6F2(4388594)
+{"original":"18 46 0C 21 7F F0 38 FD 03 46 03 93 01 9B 9B 69"}
+{"replaced":"18 46 ** 21 7F F0 38 FD 03 46 03 93 01 9B 9B 69"}
+ProjectileManager::addSaw//0x42FD42(4390210)
+{"original":"18 46 18 21 7F F0 10 FA 03 46 03 93 01 9B 9B 69"}
+{"replaced":"18 46 ** 21 7F F0 10 FA 03 46 03 93 01 9B 9B 69"}
+
+//WeaponFactory::createRandomStartWeapon//0x4AF03E(4911166) First Gun.
+{"original":"03 46 03 93 03 98 63 F6 F3 FA 03 46 01 98 19 46"}
+{"replaced":"03 46 03 93 03 98 63 F6 F3 FA 03 46 01 98 ** 21"}
+
+//SoldierManager::spawnPlayer
+//0x475610(4675088)Second Gun.
+{"original":"19 46 39 F0 A9 FD 03 46 11 93 11 9B 1B 68 03 F5"}
+{"replaced":"** 21 39 F0 A9 FD 03 46 11 93 11 9B 1B 68 03 F5"}
+//0x475590(4674960)Bomb.
+{"original":"02 21 39 F0 E9 FD 03 46 10 93 10 9B 1B 68 03 F5"}
+{"replaced":"** 21 39 F0 E9 FD 03 46 10 93 10 9B 1B 68 03 F5"}
+
+//Stage::updateStep->x
+//487B74(4750196)Auto Fire.
+{"original":"03 46 00 2B 0C D0 33 4B E3 58 1B 68 1B 68 03 F5"}
+{"replaced":"03 46 00 2B C0 46 33 4B E3 58 1B 68 1B 68 03 F5"}
+
+//PROXYNADE::updateItemStep->x
+//3F24BE(4138174)Infinite Proxy Throw.- VSUB.F32  S15, S14, S15
+{"original":"77 EE 27 7A 0D 9B C3 ED 44 7A 0D 9D 08 AB 18 46"}
+{"replaced":"77 EE 67 7A 0D 9B C3 ED 44 7A 0D 9D 08 AB 18 46"}
+//3F251E(4138270)Attach Proxy.
+{"original":"00 F0 D5 80 0D 9B 01 22 83 F8 E5 20 0D 9B 01 22"}
+{"replaced":"C0 46 C0 46 0D 9B 01 22 83 F8 E5 20 0D 9B 01 22"}
+
+//Tracer::onSpark->x
+//499110(4821264)Bullets Throw Walls.
+{"original":"82 B0 2D E9 F0 47 2D ED 02 8B A4 B0 0B 90 2E A9"}
+{"replaced":"70 47 2D E9 F0 47 2D ED 02 8B A4 B0 0B 90 2E A9"}
+
+//PlasmaBall::getRadius
+
+[END]

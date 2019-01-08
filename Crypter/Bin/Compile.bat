@@ -1,0 +1,2 @@
+javac Crypter.java
+pause
