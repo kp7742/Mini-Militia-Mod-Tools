@@ -1,0 +1,574 @@
+Doodle Army 2: Mini Militia
+
+Lib Type: arm64-v8a : ARM64(64bit)
+
+Version: v4.3.3 
+
+Modification Files: libcocos2dcpp.so
+
+Note(Disclaimer): This is freely available patch list for public usage. if you want to share or use it in your mod then always give credits.
+	              we are not responsible for any strike given by appsomniacs ltd. on your content. No support for any update in future.
+
+-> Main Mods <-
+
+1) Remove Early Quit Ads(First BL)
+Offset: 0xa0b4b4
+Original: C8 09 00 34
+Replaced: 4E 00 00 14
+
+2) Game Run In Background
+Offset: 0x8c41d4
+Original: FD 7B BF A9
+Replaced: C0 03 5F D6
+
+3) Lan Player Limit 256
+Offset: 0x98a118
+Original: E1 03 1C 32
+Replaced: A1 4A 80 52
+
+4) Custom Player Limit 12(LDR before Compare)
+Offset: 0x918900
+Original: 69 42 41 B9
+Replaced: 89 01 80 52
+
+5) Unlimited Health
+Offset: 0x9ceca0
+Original: FF 83 01 D1
+Replaced: C0 03 5F D6
+
+6) Unlocked Propack
+Offset: 0xa19df0
+Original: F4 4F BE A9 FD 7B 01 A9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+7) Store Item Unlocked
+Offset: 0x931f18
+Original: F5 0F 1D F8 F4 4F 01 A9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+8) Unlimited Flying Power
+Offset: 0x9cdd20
+Original: FD 7B BF A9 FD 03 00 91
+Replaced: 20 00 80 52 C0 03 5F D6
+
+9) Bullets Per Shots
+Offset: 0x9f2c98
+Original: 00 60 42 B9
+Replaced: 60 00 80 52
+
+10) Weapon Reload Time
+Offset: 0x9f283c
+Original: 00 08 42 BD 01 24 42 BD
+Replaced: E0 03 1F 2A C0 03 5F D6
+
+11) Anti Gravity
+Offset: 0x941190
+Original: 00 C0 40 BD
+Replaced: E0 03 1F 2A
+
+12) Any Gun Dual Wield
+Offset: 0x9f2cb0
+Original: 00 BC 48 39
+Replaced: 20 00 80 52
+
+13) Any Gun Dual Wield2
+Offset: 0x9f2cc0
+Original: 00 C0 48 39
+Replaced: 20 00 80 52
+
+14) Fly Through Walls
+Offset: 0x941cc0
+Original: FF 83 03 D1
+Replaced: C0 03 5F D6
+
+15) Robots Can't See
+Offset: 0x8f50a4
+Original: FF 83 01 D1 E9 23 03 6D
+Replaced: E0 03 1F 2A C0 03 5F D6
+
+16) All Weapon Laser
+Offset: 0x9f5d94
+Original: 28 0C 00 51 1F 85 00 71
+Replaced: 20 00 80 52 C0 03 5F D6
+
+17) Respawn Time Mod(MOV)
+Offset: 0x9cf890
+Original: 09 22 A8 52
+Replaced: 09 F0 A7 52
+
+18) Invisible Mod
+Offset: 0x95d538
+Original: F5 0F 1D F8
+Replaced: C0 03 5F D6
+
+19) Die By Guns Only
+Offset: 0x8fab58
+Original: FF C3 03 D1
+Replaced: C0 03 5F D6
+
+20) Die By Guns Only2
+Offset: 0x91c240
+Original: FF C3 01 D1
+Replaced: C0 03 5F D6
+
+21) Die By Guns Only3
+Offset: 0x97dddc
+Original: FF 83 01 D1
+Replaced: C0 03 5F D6
+
+22) Custom Skills(** - 0 to 99)
+Offset: 0xa0e1a8
+Original: E8 0F 1E FC F3 07 00 F9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+23) Custom Skills2
+Offset: 0xa0e538
+Original: 88 55 00 90 08 45 42 F9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+24) Custom Symbol(00=IOS, 02=Android, 04=Amazon Fire, 06=Windows)
+Offset: 0xa16ca0
+Original: E0 03 00 32
+Replaced: ** 00 80 52
+
+25) Bullet Speed Hack
+Offset: 0x9f2ca8
+Original: 00 68 42 B9
+Replaced: E0 FF 9F 52
+
+26) Speed Hack(Near =0.0001, #1.5)
+Offset: 0x9cafa8
+Original: 01 10 2F 1E
+Replaced: 01 10 23 1E
+
+27) Bullet Range Hack
+Offset: 0x9f2808
+Original: 00 50 42 B9
+Replaced: E0 FF 9F 52
+
+28) Zoom Selector
+Offset: 0x9f293c
+Original: 00 28 42 BD 01 D4 41 BD 02 90 34 1E
+Replaced: 80 D9 A7 52 A0 99 99 72 C0 03 5F D6
+
+-> Weapon Selector <-
+
+29) First Gun(LDR R1)
+Offset: 0x9f4b00
+Original: 01 18 40 B9
+Replaced: 41 00 80 52
+
+30) First Gun2
+Offset: 0x9d0338
+Original: E1 0B 1E 32
+Replaced: 81 03 80 52
+
+31) Second Gun
+Offset: 0x9d02f4
+Original: E1 03 00 2A
+Replaced: 81 03 80 52
+
+32) First Bomb
+Offset: 0x9d036c
+Original: E1 03 1F 32
+Replaced: 81 03 80 52
+
+33) Second Bomb
+Offset: 0x9d03d0
+Original: E1 03 00 2A
+Replaced: 81 03 80 52
+
+34) Weapon in Survival
+Offset: 0x9e2ccc
+Original: E1 03 1F 32
+Replaced: 81 03 80 52
+
+-> Other <-
+
+35) Bullet Through Walls
+Offset: 0x9e86dc
+Original: FF 03 02 D1
+Replaced: C0 03 5F D6
+
+36) Infinite Proxy Throw
+Offset: 0x97b09c
+Original: 00 28 28 1E
+Replaced: 1F 20 03 D5
+
+37) Attach Proxy
+Offset: 0x97b0d8
+Original: A8 0D 00 34
+Replaced: 1F 20 03 D5
+
+38) Auto Fire
+Offset: 0x9342dc
+Original: 00 28 46 39
+Replaced: 20 00 80 52
+
+39) No Bullet Spread
+Offset: 0x9f2cf4
+Original: 08 00 38 1E
+Replaced: 08 00 80 52
+
+40) Any Weapon Lobby
+Offset: 0x9f8178
+Original: E1 03 13 2A
+Replaced: 41 00 80 52
+
+41) Any Weapon Lobby2
+Offset: 0x9f481c
+Original: 01 18 40 B9
+Replaced: 41 00 80 52
+
+42) Instant Weapon Spawn
+Offset: 0x9f7cd8
+Original: 00 29 20 1E
+Replaced: E0 03 27 1E
+
+43) Instant Weapon Spawn2
+Offset: 0x95f1d4
+Original: FF 83 01 D1 F7 13 00 F9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+44) Maximum Game Time(CMP)
+Offset: 0x9189ac
+Original: 1F 11 0E 71 28 C1 88 1A
+Replaced: 1F 20 03 D5 1F 20 03 D5
+
+45) Maximum Game Time2
+Offset: 0x9189fc
+Original: 1F D1 02 71
+Replaced: 1F 01 00 71
+
+46) No Dual Throw
+Offset: 0x9ce654
+Original: 48 01 00 B4
+Replaced: 0A 00 00 14
+
+47) Magic Bomb Throw
+Offset: 0x924c2c
+Original: CD 00 00 54
+Replaced: 1F 20 03 D5
+
+48) Magic Melee Punch
+Offset: 0x924b90
+Original: AD 01 00 54
+Replaced: 1F 20 03 D5
+
+49) Hide Your Weapons
+Offset: 0x95bab0
+Original: F5 0F 1D F8
+Replaced: C0 03 5F D6
+
+50) Survival Play Count(00 to FF)
+Offset: 0x9e1be4
+Original: E1 07 00 32
+Replaced: 81 01 80 52
+
+51) Sarge Weapon(00 to FF)
+Offset: 0x9e1da0
+Original: A1 00 80 52
+Replaced: 81 01 80 52
+
+52) Sarge Weapon2
+Offset: 0x9e1dc4
+Original: A1 00 80 52
+Replaced: 81 01 80 52
+
+53) Any Map Survival
+Offset: 0x93668c
+Original: EA 03 1F 32
+Replaced: EA 07 00 32
+
+54) Saw Damage Remove
+Offset: 0x9b88a4
+Original: FF C3 01 D1 EA 1B 00 FD
+Replaced: 01 00 80 52 C0 03 5F D6
+
+55) Hide from Proxy
+Offset: 0x9a8c5c
+Original: 20 28 28 1E
+Replaced: 1F 20 03 D5
+
+56) Endless Proxy
+Offset: 0x9a8cd8
+Original: AD 00 00 54
+Replaced: 05 00 00 14
+
+57) Fake Skills(00 to FF)
+Offset: 0x95d7e8
+Original: FA 03 00 2A
+Replaced: 1A 00 80 52
+
+58) High Damage Melee
+Offset: 0x9f27f8
+Original: 00 48 42 B9
+Replaced: 60 04 80 52
+
+59) High Melee Length
+Offset: 0x9f2800
+Original: 00 4C 42 B9
+Replaced: E0 FF 81 52
+
+60) Dual Gun On Spawn
+Offset: 0x9f2d44
+Original: 00 C0 49 39
+Replaced: 20 00 80 52
+
+61) Instant Health Fill(#0x1AC])
+Offset: 0x9cac44
+Original: 2D 01 00 54
+Replaced: 09 00 00 14
+
+62) Kill Team Mate
+Offset: 0x9cea80
+Original: F3 0F 1E F8 FD 7B 01 A9
+Replaced: 20 00 80 52 C0 03 5F D6
+
+63) Custom Rank
+Offset: 0xa0e550
+Original: FD 7B BF A9 FD 03 00 91 26 03 FA 97 E1 03 1F 2A FD 7B C1 A8
+Replaced: 80 0C 80 52 41 01 80 52 00 7C 00 1B 20 7C 00 1B C0 03 5F D6
+
+64) Health And Nitro Charging EMP
+Offset: 0x97de80
+Original: C1 02 80 52
+Replaced: C1 01 80 52(Health)
+          E1 01 80 52(Nitro)
+
+65) Gas From Any Bomb
+Offset: 0x8f1174
+Original: 88 1A 40 B9
+Replaced: 88 02 80 52
+
+66) Hide Bomb Throw
+Offset: 0x95ba60
+Original: F5 0F 1D F8
+Replaced: C0 03 5F D6
+
+-> Weapon Trolls <-
+
+67) Any Weapon as Granade
+Offset: 0x9a7ec0
+Original: E1 03 13 2A
+Replaced: 81 02 80 52
+
+68) Any Weapon from SMAW(Rocket Launcher)
+Offset: 0x9a8108
+Original: E1 07 1E 32
+Replaced: 81 01 80 52
+
+69) Any Weapon from SAW Gun
+Offset: 0x9a8748
+Original: E1 07 1D 32
+Replaced: 01 03 80 52
+
+70) Any Weapon from RG6(MortarLauncher)
+Offset: 0x9a8358
+Original: E1 03 1B 32
+Replaced: 01 04 80 52
+
+-> Death Sprayer <-
+
+71) Rocket Sprayer(SMAW)
+Offset: 0x9bac48
+Original: 4D 05 00 54
+Replaced: 1F 20 03 D5
+
+72) Saw Sprayer
+Offset: 0x9b9394
+Original: 2D 08 00 54
+Replaced: 1F 20 03 D5
+
+73) MiniGun Sprayer
+Offset: 0x93d75c
+Original: 2D 06 00 54
+Replaced: 1F 20 03 D5
+
+74) MiniGun Sprayer2
+Offset: 0x93d76c
+Original: AB 05 00 54
+Replaced: 1F 20 03 D5
+
+75) EMP Sprayer
+Offset: 0x8ef0c4
+Original: ED 08 00 54
+Replaced: 1F 20 03 D5
+
+76) Mortar Sprayer(RG6)
+Offset: 0x9aa9c8
+Original: 4D 05 00 54
+Replaced: 1F 20 03 D5
+
+77) Sniper Sprayer
+Offset: 0x93b590
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+78) Magnum Sprayer
+Offset: 0x93c908
+Original: 4D 05 00 54
+Replaced: 1F 20 03 D5
+
+79) MP5 Sprayer
+Offset: 0x93ef60
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+80) TAVOR Sprayer
+Offset: 0x9e31e0
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+81) AK47 Sprayer
+Offset: 0x8bc1dc
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+82) TEC9 Sprayer
+Offset: 0x9e3d24
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+83) AA12 Sprayer
+Offset: 0x8bb52c
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+84) HuntingPistol Sprayer
+Offset: 0x92c7a4
+Original: CD 05 00 54
+Replaced: 1F 20 03 D5
+
+-> Test Mods <-
+
+85) Flag Rewarded Gun
+Offset: 0x9f7bb0
+Original: E1 0B 1E 32
+Replaced: 81 01 80 52
+
+86) CTF always WIN
+Offset: 0x9f7330
+Original: F7 0D 00 B4
+Replaced: 1F 20 03 D5
+
+87) New Dual Wield1
+Offset: 0x9f2cb0
+Original: 00 BC 48 39
+Replaced: 20 00 80 52
+
+88) New Dual Wield2
+Offset: 0x9f2cc0
+Original: 00 C0 48 39
+Replaced: 20 00 80 52
+
+89) New Dual Wield3
+Offset: 0x95bab0
+Original: F5 0F 1D F8
+Replaced: C0 03 5F D6
+
+90) Walking Speed(Under =0.0001, #3.0)
+Offset: 0x9cb11c
+Original: 01 10 21 1E
+Replaced: 01 F0 27 1E
+
+91) M16 Sprayer
+Offset: 0x93aa84
+Original: 7F 32 0B 39 7F CA 02 B9
+Replaced: 1F 20 03 D5 1F 20 03 D5
+
+92) Gas Cloud Color(Green and Red and Blue)(00 to FF)
+Offset: 0x91bf98
+Original: 89 EC 9F 52 08 00 40 F9 08 BD 41 F9 FF 0B 00 39 E9 03 00 79
+Replaced: 08 00 40 F9 08 BD 41 F9 89 05 80 52 89 EC BF 72 E9 03 00 B9
+
+93) No Color GasCloud
+Offset: 0x91bfb0
+Original: 00 01 3F D6
+Replaced: 1F 20 03 D5
+
+94) Die By Bombs Only
+Offset: 0x971990
+Original: 08 03 16 CB
+Replaced: 1F 20 03 D5
+
+-> Some Assembly Codes <-
+
+MOV W0, #*(Value)(0 to 255)
+RET
+= ** 00 80 52 C0 03 5F D6
+
+RET = C0 03 5F D6
+
+NOP = 1F 20 03 D5
+
+-> Gun Mods Codes <-
+
+MOVS R1,#*
+WeaponFactory::createWeaponFromAmmoType
+Codes:
+MACHETE - 1
+FRAGNADE - 2
+DEAGLE - 3
+MAGNUM - 4
+UZI - 5
+MP5 - 6
+AK47 - 7
+M16 - 8
+SHOTGUN - 9
+M93BA - 10 (A)
+SMAW(ROCKETGUN) - 11 (B)
+ROCKET - 12 (C)
+RIOTSHIELD - 13 (D)
+Healthpack - 14 (E)
+Boosttank - 15 (F)
+M14 - 16 (10)
+PHASR - 17 (11)
+GDEAGLE - 18 (12)
+FLAMETHROWER - 19 (13)
+GASNADE - 20 (14)
+EMP - 21 (15)
+PROXYNADE - 23 (17)
+SAW - 24 (18)
+SAWGUN - 25 (19)
+TAVOR - 26 (1A)
+MINIGUN - 27 (1B)
+TEC9 - 28 (1C)
+RG6(Mortar Launcher) - 29 (1D)
+EMPNADE - 30 (1E)
+XM8 - 31 (1F)
+Mortar - 32 (20)
+Flag Blue - 33 (21)
+Flag Orange - 34 (22)
+Hunting Pistol - 35 (23)
+AA12 - 36 (24)
+
+-> Zoom Mods Codes <-
+
+0x3F800000 - 1x - 09 00 80 52 09 F0 A7 72 C0 03 5F D6
+0x3F666666 - 2x - C9 CC 8C 52 C9 EC A7 72 C0 03 5F D6
+0x3F4CCCCD - 3x - A9 99 99 52 89 E9 A7 72 C0 03 5F D6
+0x3F333333 - 4x - 69 66 86 52 69 E6 A7 72 C0 03 5F D6
+0x3F19999A - 5x - 49 33 93 52 29 E3 A7 72 C0 03 5F D6
+0x3F000000 - 6x - 09 00 80 52 09 E0 A7 72 C0 03 5F D6
+0x3ECCCCCD - 7x - A9 99 99 52 89 D9 A7 72 C0 03 5F D6
+0x3E800000 - 8x - 09 00 80 52 09 D0 A7 72 C0 03 5F D6
+0x3E666666 - 9x - C9 CC 8C 52 C9 CC A7 72 C0 03 5F D6
+0x3E4CCCCD - 10x - A9 99 99 52 89 C9 A7 72 C0 03 5F D6
+0x3E333333 - 11x - 69 66 86 52 69 C6 A7 72 C0 03 5F D6
+
+-> SpawnTime Mods Codes <-
+
+FMOV S0, #1.0 - 1s - 00 10 2E 1E
+FMOV S0, #2.0 - 2s - 00 10 20 1E
+FMOV S0, #3.0 - 3s - 00 10 21 1E
+FMOV S0, #4.0 - 4s - 00 10 22 1E
+FMOV S0, #5.0 - 5s - 00 90 22 1E
+FMOV S0, #6.0 - 6s - 00 10 23 1E
+FMOV S0, #7.0 - 7s - 00 90 23 1E
+FMOV S0, #8.0 - 8s - 00 10 24 1E
+FMOV S0, #9.0 - 9s - 00 50 24 1E
+FMOV S0, #10.0 - 10s - 00 90 24 1E
+FMOV S0, #11.0 - 11s - 00 D0 24 1E
+FMOV S0, #30.0 - 30s - 00 D0 27 1E
+FMOV S0, #31.0 - 31s - 00 F0 27 1E
