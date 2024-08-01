@@ -19,7 +19,7 @@ Offset: 0x45e08c
 Original: 00 48 2D E9
 Replaced: 1E FF 2F E1
 
-3) Lan Player Limit 256
+3) Lan Player Limit 2056
 Offset: 0x53315c
 Original: 10 10 A0 E3
 Replaced: FF 10 A0 E3
@@ -32,7 +32,7 @@ Replaced: 0C 10 A0 E3
 5) Unlimited Health
 Offset: 0x57d8b0
 Original: F0 4B 2D E9
-Replaced: 1E FF 2F E1
+Replaced: F0 4B 2D E9
 
 6) Unlocked Propack
 Offset: 0x5cfa30
@@ -47,22 +47,21 @@ Replaced: 01 00 A0 E3 1E FF 2F E1
 8) Unlimited Flying Power
 Offset: 0x57c770
 Original: 00 48 2D E9 0D B0 A0 E1
-Replaced: 01 00 A0 E3 1E FF 2F E1
+Replaced: 00 48 2D E9 0D B0 A0 E1
 
 9) Bullets Per Shots(00 to FF)
 Offset: 0x5a4cb4
 Original: D8 01 90 E5
-Replaced: ** 00 A0 E3
+Replaced: D8 01 90 E5
 
 10) Unlimited Ammo
 Offset: 0x5a4718
 Original: 83 1F A0 E3 F1 00 90 E1 00 00 50 E3 00 00 A0 D3
-Replaced: 83 1F A0 E3 04 20 A0 E3 B1 20 80 E1 F1 00 90 E1
-
+Replaced: 83 1F A0 E3 F1 00 90 E1 00 00 50 E3 00 00 A0 D3
 11) Unlimited Clip
 Offset: 0x5a473c
 Original: 0E 12 00 E3 F1 00 90 E1 00 00 50 E3 00 00 A0 D3
-Replaced: 0E 12 00 E3 04 20 A0 E3 B1 20 80 E1 F1 00 90 E1
+Replaced: 0E 12 00 E3 F1 00 90 E1 00 00 50 E3 00 00 A0 D3
 
 12) Weapon Reload Time
 Offset: 0x5a4830
@@ -72,12 +71,12 @@ Replaced: 00 00 A0 E3 1E FF 2F E1
 13) Anti Gravity
 Offset: 0x4e33cc
 Original: 74 00 90 E5
-Replaced: 00 00 A0 E3
+Replaced: 74 00 90 E5
 
 14) Any Gun Dual Wield
 Offset: 0x5a4ccc
 Original: A7 01 D0 E5
-Replaced: 01 00 A0 E3
+Replaced: A7 01 D0 E5
 
 15) Any Gun Dual Wield2
 Offset: 0x5a4cdc
@@ -87,8 +86,7 @@ Replaced: 01 00 A0 E3
 16) Fly Through Walls
 Offset: 0x4e405c
 Original: F0 4F 2D E9
-Replaced: 1E FF 2F E1
-
+Replaced: F0 4F 2D E9
 17) Robots Can't See
 Offset: 0x4917c0
 Original: F0 4B 2D E9 18 B0 8D E2
@@ -102,18 +100,18 @@ Replaced: 01 00 A0 E3 1E FF 2F E1
 19) Respawn Time Mod(MOV)
 Offset: 0x57e578
 Original: 00 10 00 E3 10 11 44 E3
-Replaced: 00 7A F7 EE 90 1A 17 EE
+Replaced: 00 10 00 E3 10 11 44 E3
 		  00 10 00 E3 80 1F 43 E3
 
 20) Invisible Mod
 Offset: 0x501eb8
 Original: 70 4C 2D E9
-Replaced: 1E FF 2F E1
+Replaced: 70 4C 2D E9
 
 21) Die By Guns Only
 Offset: 0x497b00
 Original: F0 4F 2D E9
-Replaced: 1E FF 2F E1
+Replaced:  F0 4F 2D E9
 
 22) Die By Guns Only2
 Offset: 0x4bb030
@@ -123,7 +121,7 @@ Replaced: 1E FF 2F E1
 23) Die By Guns Only3
 Offset: 0x525c48
 Original: F0 4D 2D E9
-Replaced: 1E FF 2F E1
+Replaced: F0 4D 2D E9
 
 24) Custom Skills(** - 0 to 99)
 Offset: 0x5c29e8
@@ -133,7 +131,7 @@ Replaced: ** 00 A0 E3 1E FF 2F E1
 25) Custom Skills2
 Offset: 0x5c2d5c
 Original: 0C 00 9F E5 00 00 9F E7
-Replaced: ** 00 A0 E3 1E FF 2F E1
+Replaced: 0C 00 9F E5 00 00 9F E7
 
 26) Custom Symbol(0=IOS, 1=Android, 2=Amazon Fire, 3=Windows)
 Offset: 0x5cc304
